@@ -31,7 +31,7 @@ campsiteRouter.route('/')
         res.statusCode = 403;
         res.end('PUT operation not supported on /campsites');
     })
-    .delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, authenticate.verifyAdmin, (req, res, next) => {
+    .delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next) => {
         Campsite.deleteMany()
             .then(response => {
                 res.statusCode = 200;
